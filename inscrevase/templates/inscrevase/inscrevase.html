@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscreva-se no Canal</title>
+    <style>
+        /* Estilo para garantir que o conteúdo fique no centro da página */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilo para o container do conteúdo */
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Estilo para o label do título */
+        .titulo-label {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para os botões */
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004085;
+        }
+
+        /* Efeito de Pisca-Pisca */
+        .pisca-pisca {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF6347;  /* Cor do texto */
+            animation: piscar 3s infinite alternate; /* Aumento do tempo para 3s */
+            margin-top: 20px;
+        }
+
+        /* Definindo a animação de piscar */
+        @keyframes piscar {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Título da página -->
+        <div class="titulo-label">Fazendo deploy do projeto em Django</div>
+
+        <!-- Título principal -->
+        <h1>Bem-vindo ao meu canal!</h1>
+        <p>Inscreva-se e deixe seu like!</p>
+
+        <!-- Botões para inscrição e like -->
+        <button onclick="mostrarConfetes('inscricao')">Inscreva-se no canal</button>
+        <button onclick="mostrarConfetes('like')">Deixe seu like</button>
+
+        <!-- Texto com efeito de pisca-pisca -->
+        <div class="pisca-pisca">
+            Feliz Natal e um Feliz 2025 para todos!
+        </div>
+    </div>
+
+    <!-- Animação de confetes (será ativada via JavaScript) -->
+    <div class="confetti" id="confetti"></div>
+
+    <!-- Adicionando o script do canvas-confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // Função para mostrar confetes
+        function mostrarConfetes(tipo) {
+            // Exibe uma mensagem no console dependendo do botão clicado
+            if (tipo === 'inscricao') {
+                alert('Você se inscreveu no canal!');
+            } else if (tipo === 'like') {
+                alert('Você deu like!');
+            }
+
+            // Dispara a animação de confetes
+            confetti({
+                particleCount: 100,
+                angle: 90,
+                spread: 45,
+                origin: { x: 0.5, y: 0.5 }  // Posição central para o efeito
+            });
+        }
+    </script>
+</body>
+</html>
